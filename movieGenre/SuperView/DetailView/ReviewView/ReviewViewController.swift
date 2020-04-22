@@ -43,7 +43,6 @@ class ReviewViewController: SuperViewController {
         Request.fetchData(urlType: .review, containerType: ReviewResult.self, page: page, id: movie?.id ?? 0) { (result) in
             DispatchQueue.main.async {
                 self.dataSource = result as? ReviewResult
-                dump(result)
                 self.reviewDatas = self.dataSource?.results
                 self.tableView.reloadData()
             }

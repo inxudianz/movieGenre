@@ -23,7 +23,6 @@ class TrailerPlayer {
                 if result.site.lowercased() == "youtube" {
                     if result.type.lowercased() == "trailer" {
                         self.video = result
-                        print("VIDEO")
                         openVideoPlayer()
                     }
                 }

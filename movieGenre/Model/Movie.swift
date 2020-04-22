@@ -9,7 +9,7 @@
 import Foundation
 
 struct Movie: Decodable {
-    var poster_path: String
+    var poster_path: String?
     var adult: Bool
     var overview: String
     var release_date: String
@@ -18,7 +18,7 @@ struct Movie: Decodable {
     var original_title: String
     var original_language: String
     var title: String
-    var backdrop_path: String
+    var backdrop_path: String?
     var popularity: Float
     var vote_count: Int
     var video: Bool

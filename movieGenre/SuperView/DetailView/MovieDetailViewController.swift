@@ -17,6 +17,9 @@ class MovieDetailViewController: SuperViewController {
     @IBOutlet weak var releaseDateLabel: UILabel!
     @IBOutlet weak var releaseDateValue: UILabel!
     
+    @IBOutlet weak var reviewButton: UIButton!
+    @IBOutlet weak var trailerButton: UIButton!
+    
     @IBOutlet weak var movieOverview: UILabel!
     
     var movieData:Movie?
@@ -31,6 +34,14 @@ class MovieDetailViewController: SuperViewController {
         super.setupView()
         
         self.title = "Movie Detail"
+        
+        reviewButton.layer.borderWidth = CGFloat(3)
+        reviewButton.layer.borderColor = UIColor.blue.cgColor
+        reviewButton.layer.cornerRadius = 10
+        
+        trailerButton.layer.borderWidth = CGFloat(3)
+        trailerButton.layer.borderColor = UIColor.blue.cgColor
+        trailerButton.layer.cornerRadius = 10
         
         let imageURL = URL(string: URLPath.posterPath + (movieData?.poster_path ?? ""))
         do {

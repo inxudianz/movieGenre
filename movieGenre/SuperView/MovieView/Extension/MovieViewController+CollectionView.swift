@@ -20,14 +20,15 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
             DispatchQueue.main.async {
                 let imageURL = URL(string: URLPath.posterPath + (self.movieDatas?[indexPath.row].poster_path ?? ""))
                 do {
+                    cell.movieTitle.text = self.movieDatas?[indexPath.row].title
                     if let imageURL = imageURL {
                         let imageData = try Data(contentsOf: imageURL)
                         cell.movieImage.image = UIImage(data: imageData)
-                        cell.movieTitle.text = self.movieDatas?[indexPath.row].title
                     }
                 }
                 catch {
-                    print("An error has occured: Image not Found!")
+                    print("An error has occured: Image not Found! using default image")
+                    cell.movieImage.image = UIImage(systemName: "play.rectangle")
                 }
             }
         }

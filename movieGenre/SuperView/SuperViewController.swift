@@ -17,7 +17,24 @@ class SuperViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        checkInterfaceStyle()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        checkInterfaceStyle()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        checkInterfaceStyle()
+    }
+    
+    private func checkInterfaceStyle() {
+        if traitCollection.userInterfaceStyle == .light {
+            self.view.backgroundColor = .white
+        }
+        else {
+            self.view.backgroundColor = .black
+        }
     }
 }
 

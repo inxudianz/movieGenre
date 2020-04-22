@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Option1Test
+//  movieGenre
 //
 //  Created by William Inx on 22/04/20.
 //  Copyright © 2020 William Inx. All rights reserved.

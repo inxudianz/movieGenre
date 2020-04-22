@@ -4,10 +4,18 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Option1Test.xcscheme_^#shared#^_</key>
+		<key>movieGenre.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>9231BEDC244FEBC20094E028</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

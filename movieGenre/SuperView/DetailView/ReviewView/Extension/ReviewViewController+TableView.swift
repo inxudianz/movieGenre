@@ -24,7 +24,7 @@ extension ReviewViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == (reviewDatas?.count ?? 1) - 1 {
-            if !(page > dataSource!.page) {
+            if !(page > dataSource!.page) && reviewDatas!.count < dataSource!.total_results {
                 loadMoreData()
             }
         }

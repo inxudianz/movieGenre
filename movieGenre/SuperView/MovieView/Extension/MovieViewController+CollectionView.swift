@@ -38,7 +38,7 @@ extension MovieViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if indexPath.row == (movieDatas?.count ?? 1) - 1 {
-            if !(page > dataSource!.page) {
+            if !(page > dataSource!.page) && movieDatas!.count < dataSource!.total_results {
                 loadMoreData()
             }
         }

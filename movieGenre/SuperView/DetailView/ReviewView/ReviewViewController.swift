@@ -44,6 +44,12 @@ class ReviewViewController: SuperViewController {
             DispatchQueue.main.async {
                 self.dataSource = result as? ReviewResult
                 self.reviewDatas = self.dataSource?.results
+                if self.reviewDatas?.count == 0 {
+                    self.tableView.isHidden = true
+                }
+                else {
+                    self.tableView.isHidden = false
+                }
                 self.tableView.reloadData()
             }
         }

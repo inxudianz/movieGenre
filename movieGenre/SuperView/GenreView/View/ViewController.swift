@@ -12,14 +12,14 @@ class ViewController: SuperViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var dataSource:GenreResult?
+    var presenter:ViewToPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         setupView()
-        loadData()
+        presenter?.updateView()
     }
     
     override func setupView() {
@@ -29,14 +29,16 @@ class ViewController: SuperViewController {
         tableView.delegate = self
         tableView.dataSource = self
     }
-    override func loadData() {
-        Request.fetchData(urlType: .genre, containerType: GenreResult.self) { (result) in
-            DispatchQueue.main.async {
-                self.dataSource = result as? GenreResult
-                self.tableView.reloadData()
-            }
-        }
-    }
+}
 
+extension ViewController: PresenterToViewProtocol {
+    func showOrigin() -> UIViewController {
+        return self
+    }
+    
+    func showGenre(genre: GenreResult) {
+        presenter?.setDataSource(dataSource: genre)
+        self.tableView.reloadData()
+    }
 }
 
